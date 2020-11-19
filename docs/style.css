@@ -1,0 +1,16 @@
+body {
+    background: #091a28;
+}
+
+header {
+    background: #091a28;
+    height: 100px;
+}
+
+#result{
+    background-color: #ffffff;
+    border: 1px;
+    width: 840px;
+    height: 500px;
+    margin-bottom: 4px;
+}

@@ -1,0 +1,59 @@
+.palette {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #b4b4b4;
+    height: 100px;
+    width: 840px;
+    margin-bottom: 4px;
+}
+
+.color{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    border-radius: 50%;
+    background: #535353;
+    display: inline-block;
+    
+}
+
+.color:hover{
+    opacity: 90%;
+}
+
+/*==================================*/
+
+/* - RGB - */
+#red{
+    background-color: rgb(255, 0, 0);
+}
+
+#green{
+    background-color: rgb(0, 255, 0);
+}
+
+#blue{
+    background-color: rgb(0, 0, 255);
+}
+
+/* - CMY - */
+#cyan{
+    background-color: rgb(0, 255, 255);
+}
+
+#magenta{
+    background-color: rgb(255, 0, 255);
+}
+
+#yellow{
+    background-color: rgb(255, 255, 0);
+}
+
+/* - B & W - */
+#white{
+    background-color: rgb(255, 255, 255);
+}
+
+#black{
+    background-color: rgb(0, 0, 0);
+}
