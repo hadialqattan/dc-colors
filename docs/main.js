@@ -73,6 +73,7 @@ function computeAndFillInCanvas(rgb1, rgb2){
             }
         } else {
             let rgbPrimary, rgbSecondary
+
             if(rgb1[2]){
                 rgbPrimary = rgb1[0]
                 rgbSecondary = rgb2[0]
@@ -113,6 +114,9 @@ $(".color").click(function () {
     let isPrimary = $(this).hasClass("primary")
     let isWhite = $(this).hasClass("white")
     let isBlack = $(this).hasClass("black")
+    if(!isLight){
+        isPrimary = !isPrimary
+    }
     if(!rgb1){
         rgb1 = [rgbBinValues, isLight, isPrimary, isWhite, isBlack]
     } else if (!rgb2) {
