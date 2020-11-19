@@ -24,7 +24,9 @@ function addBinPrimaryColors(rgb1, rgb2, isLights, isSameType) {
     let isSameColor = true
     for(let i = 0; i < 3; i++){
         result[i] = rgb1[i] || rgb2[i]
-        isSameColor = rgb1[i] == rgb2[i]
+        if(isSameColor){
+            isSameColor = rgb1[i] == rgb2[i]
+        }
     }
     if(!isLights && !isSameType && !isSameColor) {
         result = [false, false, false]
