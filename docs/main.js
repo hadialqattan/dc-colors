@@ -37,8 +37,9 @@ function addBinSecondaryColors(rgb1, rgb2) {
 }
 
 /* -------------- Primary & Secondary function -------------- */
-function addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, isLights) {
+function addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, isPrimaryLight, isSecondaryLight) {
     let isComplementary = true
+    let isLights = isPrimaryLight && isSecondaryLight
     for(let i = 0; i < 3; i++){
         if(rgbPrimary[i] && rgbSecondary[i]){
             isComplementary = false
@@ -48,7 +49,7 @@ function addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, isLights) {
     if(isComplementary){
         return isLights? [true, true, true]: [false, false, false]
     } else {
-        return rgbSecondary
+        return isLights? rgbSecondary: rgbPrimary
     }
 }
 
@@ -73,7 +74,6 @@ function computeAndFillInCanvas(rgb1, rgb2){
             }
         } else {
             let rgbPrimary, rgbSecondary
-
             if(rgb1[2]){
                 rgbPrimary = rgb1[0]
                 rgbSecondary = rgb2[0]
@@ -81,7 +81,7 @@ function computeAndFillInCanvas(rgb1, rgb2){
                 rgbPrimary = rgb2[0]
                 rgbSecondary = rgb1[0]
             }
-            binValues = addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, rgb1[1] == rgb2[1])
+            binValues = addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, rgb1[1], rgb2[1])
         }
     }
     result = getRGBfromBinValues(binValues)
@@ -114,9 +114,6 @@ $(".color").click(function () {
     let isPrimary = $(this).hasClass("primary")
     let isWhite = $(this).hasClass("white")
     let isBlack = $(this).hasClass("black")
-    if(!isLight){
-        isPrimary = !isPrimary
-    }
     if(!rgb1){
         rgb1 = [rgbBinValues, isLight, isPrimary, isWhite, isBlack]
     } else if (!rgb2) {
