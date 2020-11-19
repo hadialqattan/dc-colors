@@ -19,10 +19,15 @@ function getRGBfromBinValues(rgbBinValues) {
 }
 
 /* -------------- Primary function -------------- */
-function addBinPrimaryColors(rgb1, rgb2) {
+function addBinPrimaryColors(rgb1, rgb2, isLights, isSameType) {
     let result = []
+    let isSameColor = true
     for(let i = 0; i < 3; i++){
         result[i] = rgb1[i] || rgb2[i]
+        isSameColor = rgb1[i] == rgb2[i]
+    }
+    if(!isLights && !isSameType && !isSameColor) {
+        result = [false, false, false]
     }
     return result
 }
@@ -37,9 +42,8 @@ function addBinSecondaryColors(rgb1, rgb2) {
 }
 
 /* -------------- Primary & Secondary function -------------- */
-function addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, isPrimaryLight, isSecondaryLight) {
+function addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, isLights) {
     let isComplementary = true
-    let isLights = isPrimaryLight && isSecondaryLight
     for(let i = 0; i < 3; i++){
         if(rgbPrimary[i] && rgbSecondary[i]){
             isComplementary = false
@@ -55,10 +59,12 @@ function addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, isPrimaryLigh
 
 /* -------------- Main logic -------------- */
 var rgb1 = null  // color, type
-var rgb2 = null // color, type
+var rgb2 = null  // color, type
 
 function computeAndFillInCanvas(rgb1, rgb2){
     let result = ""
+    let isLights = rgb1[1] && rgb2[1]
+    let isSameType = rgb1[1] == rgb2[1]
     if(rgb1[3]) {  // white & color
         binValues = rgb2[0]
     } else if (rgb2[3]) {  // white & color
@@ -68,7 +74,7 @@ function computeAndFillInCanvas(rgb1, rgb2){
     } else {  // colors
         if(rgb1[2] == rgb2[2]){
             if(rgb1[2]) {
-                binValues = addBinPrimaryColors(rgb1[0], rgb2[0])
+                binValues = addBinPrimaryColors(rgb1[0], rgb2[0], isLights, isSameType)
             } else {
                 binValues = addBinSecondaryColors(rgb1[0], rgb2[0])
             }
@@ -81,7 +87,7 @@ function computeAndFillInCanvas(rgb1, rgb2){
                 rgbPrimary = rgb2[0]
                 rgbSecondary = rgb1[0]
             }
-            binValues = addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, rgb1[1], rgb2[1])
+            binValues = addBinPrimaryAndSecondaryColors(rgbPrimary, rgbSecondary, isLights)
         }
     }
     result = getRGBfromBinValues(binValues)
