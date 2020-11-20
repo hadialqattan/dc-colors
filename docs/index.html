@@ -3,76 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A basic color calculator, mixer, and combinator that calculates both additive and subtractive colors.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="./assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="colors.css">
     <title>DC Colors</title>
 </head>
 <body>
     <header>
-
+        <center>
+            <a href="credits.html">
+                <img src="./assets/dcc_logo.png" alt="DC Colors logo" width="130"/>
+            </a>
+        </center>
     </header>
     <main>
         <center>
             <div id="result">
-
+                <span class="trush" id="trush-icon"></span>
             </div>
-            <div class="palette" id="lights">
-                <span class="color primary" id="red">
+            <div class="packet">
+                <div class="palette" id="lights">
+                    <span class="icon" id="light-icon">
 
-                </span>
-                <span class="color primary" id="green">
+                    </span>
+                    <span class="color primary" id="red">
 
-                </span>
-                <span class="color primary" id="blue">
+                    </span>
+                    <span class="color primary" id="green">
 
-                </span>
-                <span class="color secondary" id="cyan">
+                    </span>
+                    <span class="color primary" id="blue">
 
-                </span>
-                <span class="color secondary" id="magenta">
+                    </span>
+                    <span class="color secondary" id="cyan">
 
-                </span>
-                <span class="color secondary" id="yellow">
+                    </span>
+                    <span class="color secondary" id="magenta">
 
-                </span>
-                <span class="color white" id="white">
+                    </span>
+                    <span class="color secondary" id="yellow">
 
-                </span>
-                <span class="color black" id="black">
+                    </span>
+                    <span class="color white" id="white">
 
-                </span>
-            </div>
-            <div class="palette" id="paint">
-                <span class="color primary" id="red">
+                    </span>
+                    <span class="color black" id="black">
 
-                </span>
-                <span class="color primary" id="green">
+                    </span>
+                </div>
+                <div class="line">
 
-                </span>
-                <span class="color primary" id="blue">
+                </div>
+                <div class="palette" id="paint">
+                    <span class="icon" id="splats-icon">
+                        
+                    </span>
+                    <span class="color primary" id="red">
 
-                </span>
-                <span class="color secondary" id="cyan">
+                    </span>
+                    <span class="color primary" id="green">
 
-                </span>
-                <span class="color secondary" id="magenta">
+                    </span>
+                    <span class="color primary" id="blue">
 
-                </span>
-                <span class="color secondary" id="yellow">
+                    </span>
+                    <span class="color secondary" id="cyan">
 
-                </span>
-                <span class="color white" id="white">
+                    </span>
+                    <span class="color secondary" id="magenta">
 
-                </span>
-                <span class="color black" id="black">
+                    </span>
+                    <span class="color secondary" id="yellow">
 
-                </span>
+                    </span>
+                    <span class="color white" id="white">
+
+                    </span>
+                    <span class="color black" id="black">
+
+                    </span>
+                </div>
             </div>
         </center>
     </main>
-    <footer>
-
-    </footer>
+    <!--<footer></footer>-->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="main.js"></script>

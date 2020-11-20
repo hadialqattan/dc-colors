@@ -97,21 +97,16 @@ function computeAndFillInCanvas(rgb1, rgb2){
 }
 
 /* -------------- Onclick event observing -------------- */
-$(".reset").click(function(){
-    rgb1 = null
-    rgb2 = null
-})
-
-$("#result").click(function(){
+$("#trush-icon").click(function(){
     rgb1 = null
     rgb2 = null
     //TODO refactor this shit:
-    $(this).css({"background-color": "#ffffff"})
+    $("#result").css({"background-color": "#ffffff"})
     $(".color").each(function(){
         $(this).css({
             "border": "0px",
-            "height": "80px",
-            "width": "80px"
+            "height": "60px",
+            "width": "60px"
         })
     })
 })
@@ -131,9 +126,9 @@ $(".color").click(function () {
         return
     }
     $(this).css({
-        "border": "1.5px solid #b4b4b4",
-        "height": "72px",
-        "width": "72px"
+        "border": "3px solid rgba(255, 255, 255, 0.5)",
+        "height": "54px",
+        "width": "54px"
     })
     if(rgb1 && rgb2){
         computeAndFillInCanvas(rgb1, rgb2)

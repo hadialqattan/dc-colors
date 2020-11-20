@@ -1,16 +1,23 @@
-body {
-    background: #091a28;
+html, body {
+    background-image: linear-gradient(to bottom, #000000 , #0d2932);
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 header {
-    background: #091a28;
+    background: rgba(9,26,40, 0);
     height: 100px;
+    margin-top: 1.25%;
 }
 
 #result{
     background-color: #ffffff;
-    border: 1px;
+    border: 2px solid rgba(180, 180, 180, 1);
+    border-radius: 100px;
     width: 840px;
     height: 500px;
-    margin-bottom: 4px;
+    margin-bottom: 20px;
+    position: relative;
 }

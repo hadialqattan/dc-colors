@@ -1,20 +1,64 @@
+.packet {
+    background-color: rgba(180, 180, 180, 0.12);
+    border-radius: 65px;
+    height: 200px;
+    width: 825px;
+}
+
+.line {
+    border-bottom: 1px solid #b4b4b4;
+    width: 94%;
+}
+
 .palette {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #b4b4b4;
     height: 100px;
-    width: 840px;
+    width: 825px;
     margin-bottom: 4px;
 }
 
+#light-icon {
+    background-image: url("./assets/light_icon_64px.png");
+    background-size: contain;
+}
+
+#splats-icon {
+    background-image: url("./assets/color_splats.png");
+    background-size: contain;
+}
+
+#trush-icon {
+    background-image: url("./assets/trush_64px.png");
+    background-size: contain;
+}
+
+.trush {
+    height: 50px;
+    width: 50px;
+    margin: 38px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.icon {
+    height: 55px;
+    width: 55px;
+    margin: 0px 20px 16px 8px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .color{
-    height: 80px;
-    width: 80px;
-    margin: 10px;
+    height: 60px;
+    width: 60px;
+    margin: 22px 8px 8px;
     border-radius: 50%;
     background: #535353;
     display: inline-block;
-    
 }
 
 .color:hover{
