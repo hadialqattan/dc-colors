@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/assets/dcc_logo.png" alt="dcc-logo"/>
+  <img src="./assets/dcc_logo.png" alt="dcc-logo"/>
 </p>
 
 <p align="center">
@@ -7,5 +7,5 @@
 </p>
 
 <p align="center">
-  <img src="./docs/assets/contributors.png" alt="contributors-ar"/>
+  <img src="./assets/contributors.png" alt="contributors-ar"/>
 </p>
